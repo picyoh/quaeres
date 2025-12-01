@@ -1,9 +1,30 @@
 body {
     font-family: 'Alumni Sans Variable', sans-serif;
     background-color: floralwhite;
+    color: black;
+    margin: 0;
 }
 
 h1 {
     font-weight: 500;
     letter-spacing: 24px;
+    margin: 0;
+}
+
+a {
+    text-decoration-line: none;
+    color: black;
+}
+
+#header {
+    margin: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    padding: .7rem;
 }
