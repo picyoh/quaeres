@@ -2,7 +2,7 @@ body {
     font-family: 'Alumni Sans Variable', sans-serif;
     background-color: floralwhite;
     color: black;
-    margin: 0;
+    margin: 1.5rem;
 }
 
 h1 {
@@ -16,8 +16,11 @@ a {
     color: black;
 }
 
-#header {
-    margin: 1.5rem;
+p {
+    margin: 0;
+}
+
+header {
     display: flex;
     justify-content: space-between;
 }
@@ -26,5 +29,14 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 40%;
-    padding: .7rem;
+    padding: .5rem;
+}
+
+nav a {
+    font-size: large;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
 }
