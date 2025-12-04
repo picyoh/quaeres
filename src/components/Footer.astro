@@ -1,10 +1,16 @@
 ---
 const year = new Date().getFullYear();
+const {github, linkedin, reddit} = Astro.props;
 ---
 
 <footer>
-    <p>Quaeres { year }</p>
-    <a href="/legal">Legal</a>
-    <a href="privacy">Privacy policy</a>
-    <a href="cookie">Cookie policy</a>
+    <div class="row">
+
+    </div>
+    <div class="row">
+        <p>Quaeres { year }</p>
+        <a href="/legal">Legal</a>
+        <a href="/privacy">Privacy policy</a>
+        <a href="/cookie">Cookie policy</a>
+    </div>
 </footer>

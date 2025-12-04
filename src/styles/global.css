@@ -36,7 +36,31 @@ nav a {
     font-size: large;
 }
 
-footer {
+.row {
     display: flex;
     justify-content: space-between;
+}
+
+.demi {
+    width: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-flow: column;
+
+}
+
+.filter-light-grey {
+    filter: invert(80%)
+}
+
+.filter-grey {
+    filter: invert(50%)
+}
+
+footer {
+
 }
