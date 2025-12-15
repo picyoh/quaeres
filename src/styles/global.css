@@ -44,17 +44,33 @@ nav a {
 .demi {
     width: 50%;
     height: 80vh;
-    display:flex;
+    display: flex;
+}
+
+.centered {
     justify-content: center;
     align-items: center;
 }
 
 .column {
     flex-flow: column;
-
+    justify-content: center;
+    align-items: flex-end;
 }
 
-#heroLogo{
+#heroLogo {
     filter: drop-shadow(3px 12px grey) drop-shadow(3px 12px lightgrey);
     transition: 1s linear;
+}
+
+.animatedTitle {
+    width: 10vw;
+    font-size: large;
+    padding: 1rem 1rem;
+}
+
+.animatedTitle:hover{
+    width: 35vw;
+    background-color: lightgray;
+    transition: width 1s linear;
 }
