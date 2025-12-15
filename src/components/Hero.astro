@@ -2,18 +2,51 @@
 
 ---
 
-<div class="row">
-  <div class="demi">
-    <svg id="logo" width="144" height="270" xmlns="http://www.w3.org/2000/svg">
-      <image href="/src/images/Simple.svg" y="30" class="filter-light-grey" />
-      <image href="/src/images/Simple.svg" y="15" class="filter-grey" />
-      <image href="/src/images/Simple.svg" />
-    </svg>
+<section class="hero row">
+  <div id="logoSection" class="demi">
+    <img id="heroLogo" src="/src/images/Simple.svg" alt="Animated logo" />
   </div>
   <div class="demi column">
-    <a href="">Computer vision</a>
     <a href="">Creative coding</a>
-    <a href="">Webdesign</a>
-    <a href="">Typography</a>
+    <a href="">Computer vision</a>
+    <a href="">Experiments</a>
   </div>
-</div>
+</section>
+<script>
+  const logoSection = document.getElementById("logoSection");
+  const heroLogo = document.getElementById("heroLogo");
+  const logoPos = heroLogo!.getBoundingClientRect();
+
+  let posX = 0;
+  let posY = 0;
+  let timing = 100;
+  // Animation id
+  let animate = 0;
+
+  // Start animation
+  logoSection!.addEventListener("mouseenter", () => {
+    animate = requestAnimationFrame(step);
+  });
+
+  function step() {
+    // Modify timing
+    timing > 0 ? timing-- : timing;
+    // Get mouse move
+    logoSection!.addEventListener("mousemove", (event) => {
+      // Get positions
+      posX = Math.round((logoPos.left - event.clientX) / 15);
+      posY = Math.round((logoPos.top - event.clientY) / 15);
+      // Modify style
+      heroLogo!.style.filter = `drop-shadow(${posX}px ${posY}px grey) drop-shadow(${posX}px ${posY}px lightgrey)`;
+      heroLogo!.style.transition = `${timing / 100}s`;
+    });
+    animate = requestAnimationFrame(step);
+  }
+  // Stop animation
+  logoSection!.addEventListener("mouseleave", () => {
+    timing = 100;
+    heroLogo!.style.filter = "";
+    heroLogo!.style.transition = "";
+    cancelAnimationFrame(animate);
+  });
+</script>

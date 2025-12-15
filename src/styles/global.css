@@ -43,6 +43,7 @@ nav a {
 
 .demi {
     width: 50%;
+    height: 80vh;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -53,14 +54,7 @@ nav a {
 
 }
 
-.filter-light-grey {
-    filter: invert(80%)
-}
-
-.filter-grey {
-    filter: invert(50%)
-}
-
-footer {
-
+#heroLogo{
+    filter: drop-shadow(3px 12px grey) drop-shadow(3px 12px lightgrey);
+    transition: 1s linear;
 }
