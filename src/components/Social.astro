@@ -1,12 +1,28 @@
 ---
-import {FaGithub, FaLinkedinIn, FaReddit} from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaReddit } from "react-icons/fa";
 const { platform, username } = Astro.props;
-
-const getLogo = (platform: String) => {
-  const logoName = "<Fa" + platform.charAt(0).toUpperCase() + platform.slice(1) + "/>";
-  console.log(logoName)
-  return logoName;
-};
+const logos = [
+  {
+    name: "github",
+    icon: FaGithub,
+  },
+  {
+    name: "linkedin",
+    icon: FaLinkedin,
+  },
+  {
+    name: "reddit",
+    icon: FaReddit,
+  },
+];
 ---
 
-<a href={`https://www.${platform}.com/${username}`}><FaGithub /></a>
+<a href={`https://www.${platform}.com/${username}`}
+  >{logos.map((item, index) => {
+    return(
+      <>
+      {item.name === platform ? <item.icon />: null}
+      </>
+    )
+  })}</a
+>
