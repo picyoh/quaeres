@@ -69,8 +69,15 @@ nav a {
     padding: 1rem 1rem;
 }
 
+/* TODO: check ease in out */
 .animatedTitle:hover{
     width: 35vw;
     background-color: lightgray;
-    transition: width 1s linear;
+    transition: width 1s ease-in-out;
+}
+
+#switchMode{
+    width:24px;
+    height:24px;
+    border-radius: 50%;
 }

@@ -1,11 +1,14 @@
 ---
+import Social from "./Social.astro";
 const year = new Date().getFullYear();
-const { github, linkedin, reddit } = Astro.props;
 ---
 
 <footer>
     <div class="row">
-
+        <Social platform={"github"} username={"quaeres"} />
+        <Social platform={"linkedin"} username={"quaeres"} />
+        <Social platform={"reddit"} username={"quaeres"} />
+        <!-- TODO: add thangs.fr + check react icons-->
     </div>
     <div class="row">
         <p>Quaeres { year }</p>
