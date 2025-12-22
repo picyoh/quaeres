@@ -7,7 +7,7 @@ body {
 
 h1 {
     font-weight: 500;
-    letter-spacing: 24px;
+    letter-spacing: 32px;
     margin: 0;
 }
 
@@ -29,11 +29,71 @@ nav {
     display: flex;
     justify-content: space-between;
     width: 40%;
-    padding: .5rem;
 }
 
 nav a {
+    padding: .5rem 1rem;
     font-size: large;
+    font-weight: 400;
+    text-align: center;
+    line-height: 32px;
+    transition: all 1s ease-in-out;
+}
+
+nav a:hover {
+    color: floralwhite;
+    background-color: grey;
+    transition: all 1s ease-in-out;
+}
+
+#switchContainer {
+    padding: .5rem;
+    width: 32px;
+    height: 32px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+#switchInput {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    appearance: none;
+    border: 2px outset black;
+    border-radius: 50%;
+}
+
+.slider {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+#switchLogo {
+    cy: 50%;
+    r: 10;
+    transition: 1s ease-in-out;
+}
+
+.darkLogo {
+    cx: 65%;
+    fill: black;
+}
+
+.lightLogo{
+    cx: 50%;
+    fill: yellow;
 }
 
 .row {
@@ -67,17 +127,11 @@ nav a {
     width: 10vw;
     font-size: large;
     padding: 1rem 1rem;
+    transition: all 1s ease-in-out;
 }
 
-/* TODO: check ease in out */
-.animatedTitle:hover{
-    width: 35vw;
+.animatedTitle:hover {
+    width: 32vw;
     background-color: lightgray;
-    transition: width 1s ease-in-out;
-}
-
-#switchMode{
-    width:24px;
-    height:24px;
-    border-radius: 50%;
+    transition: all 1s ease-in-out;
 }
