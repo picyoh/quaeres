@@ -1,0 +1,34 @@
+---
+import "./Navigation.css"
+---
+
+<nav>
+  <a href="/works">Works</a>
+  <a href="/about">About</a>
+  <a href="/contact">Contact</a>
+  <label class="switch">
+    <input type="checkbox" id="switchInput" class="no-spacing m-s" />
+    <svg class="m-s slider">
+      <circle id="switchLogo" class="dark-logo"></circle>
+    </svg>
+  </label>
+</nav>
+
+<script>
+  const switchInput = document.getElementById(
+    "switchInput"
+  ) as HTMLInputElement | null;
+  const switchLogo = document.getElementById("switchLogo");
+  switchInput?.addEventListener("click", () => {
+    if (switchInput?.checked) {
+      console.log(switchInput.checked);
+      // Change Logo
+      switchLogo?.classList.replace("dark-logo", "light-logo");
+      // Switch to dark mode
+    } else {
+      // Change Logo
+      switchLogo?.classList.replace("light-logo", "dark-logo");
+      // Switch to light mode
+    }
+  });
+</script>

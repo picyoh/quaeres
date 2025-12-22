@@ -2,14 +2,19 @@
 
 ---
 
-<section class="hero row">
-  <div id="logoSection" class="demi centered">
+<section>
+  <div class="row centered">
+    <h2>
+      <span>Let's</span>
+      <span>build</span>
+      <span>together !</span>       
+      </h2>
+  </div>
+  <div id="logoSection" class="row centered">
     <img id="heroLogo" src="/src/images/Simple.svg" alt="Animated logo" />
   </div>
-  <div class="demi column">
-    <a href="" class="animatedTitle">Creative coding</a>
-    <a href="" class="animatedTitle">Computer vision</a>
-    <a href="" class="animatedTitle">Experiments</a>
+  <div class="subSection">
+
   </div>
 </section>
 <script>
@@ -37,7 +42,7 @@
       posX = Math.round((logoPos.left - event.clientX) / 15);
       posY = Math.round((logoPos.top - event.clientY) / 15);
       // Modify style
-      heroLogo!.style.filter = `drop-shadow(${posX}px ${posY}px grey) drop-shadow(${posX}px ${posY}px lightgrey)`;
+      heroLogo!.style.filter = `drop-shadow(${posX}px ${posY}px 1px var(--shadow)) drop-shadow(${posX}px ${posY}px 1px var(--light-shadow))`;
       heroLogo!.style.transition = `${timing / 100}s`;
     });
     animate = requestAnimationFrame(step);

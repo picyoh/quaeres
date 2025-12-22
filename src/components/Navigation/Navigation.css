@@ -1,0 +1,57 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+nav a {
+    padding: 0 2rem;
+    font-size: var(--nav-size);
+    text-align: center;
+    line-height: 2rem;
+    transition: var(--basic-transition);
+}
+
+nav a:hover {
+    color: var(--neutral);
+    background-color: var(--shadow);
+    transition: var(--basic-transition);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+}
+
+#switchInput {
+    appearance: none;
+    position: absolute;
+    z-index: 2;
+    border: var(--button-border);
+    border-radius: 50%;
+}
+
+.slider {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+#switchLogo {
+    cy: 50%;
+    r: 10;
+    transition: var(--basic-transition);
+}
+
+.dark-logo {
+    cx: 65%;
+    fill: var(--font-color);
+}
+
+.light-logo {
+    cx: 50%;
+    fill: var(--primary);
+}

@@ -1,115 +1,63 @@
-body {
-    font-family: 'Alumni Sans Variable', sans-serif;
-    background-color: floralwhite;
-    color: black;
-    margin: 1.5rem;
+:root {
+    /* Colors */
+    /* Dark Orange */
+    --dark-primary: #ff8c00;
+    /* Royal Gold */
+    --primary: #f8d568;
+    /* Floral White */
+    --neutral: #fffaf0;
+    /* Dusty Denim */
+    --seconday: #5d89ba;
+    /* Space Indigo */
+    --dark-secondary: #1d2951;
+    /* Pastel Gray */
+    --light-shadow: #ccc8c0;
+    /*  Spanish Gray */
+    --shadow: #999690;
+    /* Eeerie Black */
+    --font-color: #191918;
+
+    /* Types */
+    --title-font: 'Alumni Sans Variable', sans-serif;
+    --title-size: x-large;
+    --title-weight: 500;
+    --nav-size: larger;
+    --nav-weight: 500;
+    --text-font: 'Lato', sans-serif;
+    --text-size: large;
+
+    /* Spacing */
+
+    /* Buttons */
+    --button-border: 2px outset var(--font-color);
+
+    /* Inputs */
+
+    /* Links */
+
+    /* Cards */
+
+    /* Animations */
+    --basic-transition: all 1s ease-in-out;
 }
 
-h1 {
-    font-weight: 500;
-    letter-spacing: 32px;
-    margin: 0;
-}
+@media (prefers-color-scheme: dark) {}
 
-a {
-    text-decoration-line: none;
-    color: black;
-}
+/* Basic Classes */
 
-p {
-    margin: 0;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
-}
-
-nav a {
-    padding: .5rem 1rem;
-    font-size: large;
-    font-weight: 400;
-    text-align: center;
-    line-height: 32px;
-    transition: all 1s ease-in-out;
-}
-
-nav a:hover {
-    color: floralwhite;
-    background-color: grey;
-    transition: all 1s ease-in-out;
-}
-
-#switchContainer {
-    padding: .5rem;
-    width: 32px;
-    height: 32px;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-}
-
-#switchInput {
-    position: absolute;
-    z-index: 2;
+.no-spacing {
     margin: 0;
     padding: 0;
-    width: 32px;
-    height: 32px;
-    appearance: none;
-    border: 2px outset black;
-    border-radius: 50%;
-}
-
-.slider {
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    z-index: 1;
-    top: 0;
-    left: 0;
-}
-
-#switchLogo {
-    cy: 50%;
-    r: 10;
-    transition: 1s ease-in-out;
-}
-
-.darkLogo {
-    cx: 65%;
-    fill: black;
-}
-
-.lightLogo{
-    cx: 50%;
-    fill: yellow;
-}
-
-.row {
-    display: flex;
-    justify-content: space-between;
-}
-
-.demi {
-    width: 50%;
-    height: 80vh;
-    display: flex;
 }
 
 .centered {
     justify-content: center;
     align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
 }
 
 .column {
@@ -118,20 +66,65 @@ nav a:hover {
     align-items: flex-end;
 }
 
-#heroLogo {
-    filter: drop-shadow(3px 12px grey) drop-shadow(3px 12px lightgrey);
-    transition: 1s linear;
+.m-s {
+    width: 2rem;
+    height: 2rem;
 }
 
-.animatedTitle {
+
+/* HTML */
+
+body {
+    font-family: 'Alumni Sans Variable', sans-serif;
+    background-color: var(--neutral);
+    color: var(--font-color);
+    margin: 2rem;
+}
+
+h1 {
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
+    letter-spacing: 2rem;
+}
+
+h2 {
+    font-size: var(--title-size);
+    font-weight: var(--nav-weight);
+}
+
+a {
+    text-decoration-line: none;
+    color: var(--font-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 90%;
+}
+
+/* Animated titles */
+
+.animated-title {
     width: 10vw;
     font-size: large;
     padding: 1rem 1rem;
-    transition: all 1s ease-in-out;
+    transition: var(--basic-transition);
 }
 
-.animatedTitle:hover {
+.animated-title:hover {
     width: 32vw;
-    background-color: lightgray;
-    transition: all 1s ease-in-out;
+    color: var(--neutral);
+    background-color: var(--shadow);
+    transition: var(--basic-transition);
+}
+
+#heroLogo {
+    filter: drop-shadow(3px 12px 1px var(--shadow)) drop-shadow(3px 12px 2px var(--light-shadow));
+    transition: var(--basic-transition);
 }
