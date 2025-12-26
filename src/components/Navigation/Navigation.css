@@ -1,4 +1,5 @@
 nav {
+    font-family: var(--title-font);
     display: flex;
     justify-content: space-between;
     width: 50%;
@@ -21,8 +22,7 @@ nav a:hover {
 .switch {
     position: relative;
     display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    top: .25rem;
 }
 
 #switchInput {
@@ -42,7 +42,7 @@ nav a:hover {
 
 #switchLogo {
     cy: 50%;
-    r: 10;
+    r: 8;
     transition: var(--basic-transition);
 }
 

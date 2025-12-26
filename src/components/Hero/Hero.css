@@ -1,0 +1,80 @@
+:root{
+      --animps: paused;
+      --type-steps: 0;
+      --type-chars: 0ch;
+}
+
+/* Hero */
+
+  #heroLogo {
+      filter: drop-shadow(3px 12px 1px var(--shadow)) drop-shadow(3px 12px 2px var(--light-shadow));
+      transition: var(--basic-transition);
+  }
+
+  /* Typewriter animation. */
+
+  .typewriter {
+      font-family: monospace;
+      font-weight: var(--nav-weight);
+      font-size: 2rem;
+  }
+
+  .word {
+      display: none;
+      position: relative;
+      overflow: hidden;
+      white-space: nowrap;
+  }
+
+  #typeCursor {
+      display: inline-block;
+      border-right: 3px solid var(--dark-primary);
+      animation: typing 2s steps(var(--type-steps), end),
+          blink 0.3s steps(var(--type-steps), end) alternate infinite;
+      animation-play-state: var(--animps);
+  }
+
+  #typeCursor::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      right: 0;
+      display: inline-block;
+      background-color: transparent;
+      animation: .7s steps(var(--type-steps), end) 2s select forwards;
+      animation-play-state: var(--animps);
+  }
+
+  @keyframes typing {
+      from {
+          width: 0;
+      }
+
+      to {
+          width: var(--type-chars);
+      }
+  }
+
+  @keyframes blink {
+      from {
+          border-color: transparent;
+      }
+
+      to {
+          border-color: var(--dark-primary);
+      }
+  }
+
+  @keyframes select {
+      from {
+          left: 100%;
+          background-color: transparent;
+      }
+
+      to {
+          left: 0;
+          background-color: var(--dark-primary);
+      }
+  }

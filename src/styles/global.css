@@ -24,7 +24,7 @@
     --nav-size: larger;
     --nav-weight: 500;
     --text-font: 'Lato', sans-serif;
-    --text-size: large;
+    --text-size: medium;
 
     /* Spacing */
 
@@ -50,14 +50,9 @@
     padding: 0;
 }
 
-.centered {
-    justify-content: center;
-    align-items: center;
-}
-
 .row {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
 }
 
 .column {
@@ -66,30 +61,45 @@
     align-items: flex-end;
 }
 
-.m-s {
+.centered {
+    justify-content: center;
+    align-items: center;
+}
+
+.distribute {
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.m-size {
     width: 2rem;
     height: 2rem;
 }
 
+.logo-size {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.s-size {
+    width: 1rem;
+    height: 1rem;
+}
 
 /* HTML */
 
 body {
-    font-family: 'Alumni Sans Variable', sans-serif;
+    font-family: var(--text-font);
     background-color: var(--neutral);
     color: var(--font-color);
     margin: 2rem;
 }
 
 h1 {
+    font-family: var(--title-font);
     font-size: var(--title-size);
     font-weight: var(--title-weight);
     letter-spacing: 2rem;
-}
-
-h2 {
-    font-size: var(--title-size);
-    font-weight: var(--nav-weight);
 }
 
 a {
@@ -103,28 +113,8 @@ header {
 }
 
 footer {
+    font-family: var(--title-font);
     position: fixed;
     bottom: 0;
     width: 90%;
-}
-
-/* Animated titles */
-
-.animated-title {
-    width: 10vw;
-    font-size: large;
-    padding: 1rem 1rem;
-    transition: var(--basic-transition);
-}
-
-.animated-title:hover {
-    width: 32vw;
-    color: var(--neutral);
-    background-color: var(--shadow);
-    transition: var(--basic-transition);
-}
-
-#heroLogo {
-    filter: drop-shadow(3px 12px 1px var(--shadow)) drop-shadow(3px 12px 2px var(--light-shadow));
-    transition: var(--basic-transition);
 }
