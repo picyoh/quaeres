@@ -10,7 +10,6 @@ document.documentElement.style.setProperty("--animps", "running");
 wordList.forEach((word, i) => {
   // Listen to animation end
   word.addEventListener("animationend", (e: AnimationEvent) => {
-    console.log(word);
     // Get cursor position in list
     if (word.id === "typeCursor" && e.animationName === "select") {
       // Get previous index
@@ -21,7 +20,7 @@ wordList.forEach((word, i) => {
       setTimeout(() => {
         word.removeAttribute("id");
         wordList[prevIndex].id = "typeCursor";
-      }, 800);
+      }, 500);
     }
   });
 });

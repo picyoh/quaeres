@@ -1,80 +1,85 @@
-:root{
-      --animps: paused;
-      --type-steps: 0;
-      --type-chars: 0ch;
+:root {
+    --animps: paused;
+    --type-steps: 0;
+    --type-chars: 0ch;
 }
 
 /* Hero */
 
-  #heroLogo {
-      filter: drop-shadow(3px 12px 1px var(--shadow)) drop-shadow(3px 12px 2px var(--light-shadow));
-      transition: var(--basic-transition);
-  }
+#hero {
+    height:80vh;
+}
 
-  /* Typewriter animation. */
+#heroLogo {
+    filter: drop-shadow(3px 12px 1px var(--shadow)) drop-shadow(3px 12px 2px var(--light-shadow));
+    transition: var(--basic-transition);
+}
 
-  .typewriter {
-      font-family: monospace;
-      font-weight: var(--nav-weight);
-      font-size: 2rem;
-  }
+/* Typewriter animation. */
 
-  .word {
-      display: none;
-      position: relative;
-      overflow: hidden;
-      white-space: nowrap;
-  }
+.typewriter {
+    font-family: monospace;
+    font-weight: var(--nav-weight);
+    font-size: 2rem;
+}
 
-  #typeCursor {
-      display: inline-block;
-      border-right: 3px solid var(--dark-primary);
-      animation: typing 2s steps(var(--type-steps), end),
-          blink 0.3s steps(var(--type-steps), end) alternate infinite;
-      animation-play-state: var(--animps);
-  }
+.word {
+    display: none;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-  #typeCursor::after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-      width: 100%;
-      height: 100%;
-      right: 0;
-      display: inline-block;
-      background-color: transparent;
-      animation: .7s steps(var(--type-steps), end) 2s select forwards;
-      animation-play-state: var(--animps);
-  }
+#typeCursor {
+    display: inline-block;
+    animation: typing 2s steps(var(--type-steps), end);
+    animation-play-state: var(--animps);
+}
 
-  @keyframes typing {
-      from {
-          width: 0;
-      }
+#typeCursor::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    display: inline-block;
+    border-right: 3px solid var(--dark-primary);
+    border-left: 3px solid var(--dark-primary);
+    background-color: transparent;
+    animation: select .7s steps(var(--type-steps), end) 2s forwards,
+        blink 0.3s steps(var(--type-steps), end) alternate infinite;
+    animation-play-state: var(--animps);
+}
 
-      to {
-          width: var(--type-chars);
-      }
-  }
+@keyframes typing {
+    from {
+        width: 0;
+    }
 
-  @keyframes blink {
-      from {
-          border-color: transparent;
-      }
+    to {
+        width: var(--type-chars);
+    }
+}
 
-      to {
-          border-color: var(--dark-primary);
-      }
-  }
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
 
-  @keyframes select {
-      from {
-          left: 100%;
-          background-color: transparent;
-      }
+    to {
+        border-color: var(--dark-primary);
+    }
+}
 
-      to {
-          left: 0;
-          background-color: var(--dark-primary);
-      }
-  }
+@keyframes select {
+    from {
+        left: 100%;
+        background-color: transparent;
+    }
+
+    to {
+        left: 0;
+        background-color: var(--primary);
+    }
+}
