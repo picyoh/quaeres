@@ -1,0 +1,17 @@
+---
+import "./typeWriter.css";
+const { words } = Astro.props;
+---
+
+<>
+  <div id="typeWriter">
+    {
+      words.map((word: string, i: number) => (
+        <p id={i === 0 ? "typeCursor" : ""} class="word">
+          {word.trim()}
+        </p>
+      ))
+    }
+  </div>
+</>
+<script src="./TypeWriter.ts"></script>

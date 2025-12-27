@@ -1,17 +1,31 @@
 ---
-import "./Hero.css";
+import TypeWriter from "../TypeWriter/TypeWriter.astro";
+const words = ["create", "design", "develop", "build"];
 ---
 
+<style>
+  #hero {
+    height: 80vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+  }
+
+  #logoSection {
+    height: 50vh;
+  }
+
+  #heroLogo {
+    filter: drop-shadow(3px 12px 1px var(--shadow))
+      drop-shadow(3px 12px 2px var(--light-shadow));
+    transition: var(--basic-transition);
+  }
+</style>
 <section id="hero">
   <div class="row centered">
     <h2 class="typewriter">
       <div>Let's</div>
-      <div>
-        <p id="typeCursor" class="word">build</p>
-        <p class="word">create</p>
-        <p class="word">design</p>
-        <p class="word">develop</p>
-      </div>
+      <TypeWriter words={words} />
       <div>together.</div>
     </h2>
   </div>
@@ -20,4 +34,3 @@ import "./Hero.css";
   </div>
 </section>
 <script src="./logoAnimation.ts"></script>
-<script src="./typeWriter.ts"></script>

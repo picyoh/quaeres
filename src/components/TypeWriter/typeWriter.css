@@ -4,19 +4,6 @@
     --type-chars: 0ch;
 }
 
-/* Hero */
-
-#hero {
-    height:80vh;
-}
-
-#heroLogo {
-    filter: drop-shadow(3px 12px 1px var(--shadow)) drop-shadow(3px 12px 2px var(--light-shadow));
-    transition: var(--basic-transition);
-}
-
-/* Typewriter animation. */
-
 .typewriter {
     font-family: monospace;
     font-weight: var(--nav-weight);
