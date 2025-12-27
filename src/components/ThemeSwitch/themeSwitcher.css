@@ -1,0 +1,41 @@
+.switch {
+    position: relative;
+    display: inline-block;
+    top: .25rem;
+}
+
+#switchInput {
+    appearance: none;
+    position: absolute;
+    z-index: 2;
+    border: var(--button-border);
+    border-radius: 50%;
+}
+
+.slider {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+#switchLogo {
+    cy: 50%;
+    r: 8;
+    transition: var(--basic-transition);
+}
+
+.logo-size {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.dark-logo {
+    cx: 65%;
+    fill: var(--font-color);
+}
+
+.light-logo {
+    cx: 50%;
+    fill: var(--primary);
+}

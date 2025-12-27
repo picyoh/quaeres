@@ -1,39 +1,18 @@
 ---
-import "./Navigation.css"
+import "./Navigation.css";
+import ThemeSwitcher from "../ThemeSwitch/ThemeSwitcher.astro";
 ---
 
 <nav>
-  <a href="/works">Works</a>
-  <div class="subnav">
-    <a href="#">Computer vision</a>
-    <a href="#">Experiments</a>
-    <a href="#">Web design</a>
+  <div class="menu">
+    <a href="#works" class="menu-title">Works</a>
+    <div class="subMenu">
+      <a href="#">Computer vision</a>
+      <a href="#">Components</a>
+      <a href="#">Experiments</a>
+    </div>
   </div>
   <a href="/about">About</a>
   <a href="/contact">Contact</a>
-  <label class="switch logo-size">
-    <input type="checkbox" id="switchInput" class="no-spacing logo-size" />
-    <svg class="slider logo-size">
-      <circle id="switchLogo" class="dark-logo s-size"></circle>
-    </svg>
-  </label>
+  <ThemeSwitcher />
 </nav>
-
-<script>
-  const switchInput = document.getElementById(
-    "switchInput"
-  ) as HTMLInputElement | null;
-  const switchLogo = document.getElementById("switchLogo");
-  switchInput?.addEventListener("click", () => {
-    if (switchInput?.checked) {
-      console.log(switchInput.checked);
-      // Change Logo
-      switchLogo?.classList.replace("dark-logo", "light-logo");
-      // Switch to dark mode
-    } else {
-      // Change Logo
-      switchLogo?.classList.replace("light-logo", "dark-logo");
-      // Switch to light mode
-    }
-  });
-</script>

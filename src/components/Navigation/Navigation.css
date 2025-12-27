@@ -19,39 +19,26 @@ nav a:hover {
     transition: var(--basic-transition);
 }
 
-.switch {
+.menu {
+    overflow: hidden;
     position: relative;
-    display: inline-block;
-    top: .25rem;
 }
 
-#switchInput {
-    appearance: none;
+.menu:hover {
+    overflow: visible;
+}
+
+.menu a {
+    display: flex;
+    justify-content: center;
+    min-width: 6rem;
+    white-space: nowrap;
+}
+
+.subMenu {
     position: absolute;
-    z-index: 2;
-    border: var(--button-border);
-    border-radius: 50%;
-}
-
-.slider {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-}
-
-#switchLogo {
-    cy: 50%;
-    r: 8;
+    display: flex;
+    flex-direction: column;
+    top: 2rem;
     transition: var(--basic-transition);
-}
-
-.dark-logo {
-    cx: 65%;
-    fill: var(--font-color);
-}
-
-.light-logo {
-    cx: 50%;
-    fill: var(--primary);
 }
