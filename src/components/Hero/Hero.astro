@@ -7,12 +7,14 @@ const words = ["create", "design", "develop", "build"];
   #hero {
     height: 80vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
   }
 
   #logoSection {
-    width: 40vw;
+    width: 100vw;
+    height: 70vh;
   }
 
   #heroLogo {
@@ -22,15 +24,15 @@ const words = ["create", "design", "develop", "build"];
   }
 </style>
 <section id="hero">
-  <div id="logoSection" class="row centered">
-    <img id="heroLogo" src="/src/images/Simple.svg" alt="Animated logo" />
-  </div>
-  <div class="centered">
+  <div>
     <h2 class="typewriter">
       <div>Let's</div>
       <TypeWriter words={words} />
       <div>together.</div>
     </h2>
+  </div>
+  <div id="logoSection" class="row centered">
+    <img id="heroLogo" src="/src/images/Simple.svg" alt="Animated logo" />
   </div>
 </section>
 <script src="./logoAnimation.ts"></script>

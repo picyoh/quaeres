@@ -6,11 +6,11 @@ let posX = 0;
 let posY = 0;
 let timing = 100;
 // Animation id
-let animate = 0;
+let animateLogo = 0;
 
 // Start animation
 logoSection!.addEventListener("mouseenter", () => {
-  animate = requestAnimationFrame(step);
+  animateLogo = requestAnimationFrame(step);
 });
 
 function step() {
@@ -25,12 +25,12 @@ function step() {
     heroLogo!.style.filter = `drop-shadow(${posX}px ${posY}px 1px var(--shadow)) drop-shadow(${posX}px ${posY}px 1px var(--light-shadow))`;
     heroLogo!.style.transition = `${timing / 100}s`;
   });
-  animate = requestAnimationFrame(step);
+  animateLogo = requestAnimationFrame(step);
 }
 // Stop animation
 logoSection!.addEventListener("mouseleave", () => {
   timing = 100;
   heroLogo!.style.filter = "";
   heroLogo!.style.transition = "";
-  cancelAnimationFrame(animate);
+  cancelAnimationFrame(animateLogo);
 });
