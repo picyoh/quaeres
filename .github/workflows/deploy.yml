@@ -1,0 +1,33 @@
+name: Deploy Astro to Github Pages
+
+on:
+  # Trigger the workflow on pushing to 'main' branch
+  push:
+    branches: [ main ]
+  # Allow to run the workflow manually from the action tab
+  workflow_dispatch:
+
+# Allow to clone and create page deployment
+permissions:
+  content: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository using git
+        uses: actions/checkout@v5
+      - name: Install, build and upload site
+        uses: withastro/action@v5
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environement:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to Github Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

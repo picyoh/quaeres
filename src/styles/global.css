@@ -6,6 +6,8 @@
     --primary: #f8d568;
     /* Floral White */
     --neutral: #fffaf0;
+    /* Ivory Mist */
+    --dark-neutral: #fff6df;
     /* Dusty Denim */
     --seconday: #5d89ba;
     /* Space Indigo */
@@ -50,6 +52,10 @@
     padding: 0;
 }
 
+.global-padding {
+    padding: 2rem;
+}
+
 .row {
     display: flex;
     width: 100%;
@@ -83,12 +89,22 @@
 
 /* HTML */
 
+html {
+    height: 100%;
+}
+
 body {
+    box-sizing: border-box;
+    margin: 2rem;
     font-family: var(--text-font);
     background-color: var(--neutral);
     color: var(--font-color);
-    margin: 2rem;
+    background:
+        radial-gradient(circle 4px, var(--dark-neutral) , transparent) round;
+    background-size: 48px 48px;
+    background-position: 24px 24px;
 }
+
 
 h1 {
     font-family: var(--title-font);
@@ -108,8 +124,8 @@ header {
 }
 
 footer {
-    font-family: var(--title-font);
     position: fixed;
+    font-family: var(--title-font);
     bottom: 0;
-    width: 90%;
+    width: 100%;
 }
