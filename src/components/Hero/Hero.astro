@@ -1,5 +1,6 @@
 ---
 import TypeWriter from "../TypeWriter/TypeWriter.astro";
+import Simple from "../../images/Simple.svg"
 const words = ["create", "design", "develop", "build"];
 ---
 
@@ -32,7 +33,7 @@ const words = ["create", "design", "develop", "build"];
     </h2>
   </div>
   <div id="logoSection" class="row centered">
-    <img id="heroLogo" src="/src/images/Simple.svg" alt="Animated logo" />
+    <img id="heroLogo" src={Simple.src} alt="Animated logo" />
   </div>
 </section>
 <script src="./logoAnimation.ts"></script>
