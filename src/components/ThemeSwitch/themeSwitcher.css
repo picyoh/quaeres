@@ -21,7 +21,7 @@
 
 #switchLogo {
     cy: 50%;
-    r: 8;
+    r: 33%;
     transition: var(--basic-transition);
 }
 
