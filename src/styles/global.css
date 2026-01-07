@@ -106,27 +106,7 @@ body {
     background-position: 24px 24px;
 }
 
-
-h1 {
-    font-family: var(--title-font);
-    font-size: var(--title-size);
-    font-weight: var(--title-weight);
-    letter-spacing: 2rem;
-}
-
 a {
     text-decoration-line: none;
     color: var(--font-color);
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-footer {
-    display: flex;
-    flex-direction: column;
-    font-family: var(--title-font);
-    bottom: 0;
 }

@@ -1,0 +1,21 @@
+---
+import Navigation from "../components/header/Navigation/Navigation.astro";
+---
+
+<style>
+  h1 {
+    font-family: var(--title-font);
+    font-size: var(--title-size);
+    font-weight: var(--title-weight);
+    letter-spacing: 2rem;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+<header>
+  <a href="/"><h1 class="no-spacing">QUAERES</h1></a>
+  <Navigation />
+</header>

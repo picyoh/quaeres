@@ -1,5 +1,5 @@
 ---
-import TypeWriter from "../TypeWriter/TypeWriter.astro";
+import TypeWriter from "../animations/TypeWriter/TypeWriter.astro";
 import Simple from "../../images/Simple.svg"
 const words = ["create", "design", "develop", "build"];
 ---
@@ -14,7 +14,6 @@ const words = ["create", "design", "develop", "build"];
   }
 
   #logoSection {
-    width: 100vw;
     height: 70vh;
   }
 
@@ -36,4 +35,4 @@ const words = ["create", "design", "develop", "build"];
     <img id="heroLogo" src={Simple.src} alt="Animated logo" />
   </div>
 </section>
-<script src="./logoAnimation.ts"></script>
+<script src="../animations/MovingShadows/MovingShadows.ts"></script>

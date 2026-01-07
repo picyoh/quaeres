@@ -1,0 +1,29 @@
+---
+import Social from "../components/footer/Social.astro";
+import Contact from "../components/footer/Contact/Contact.astro";
+const year = new Date().getFullYear();
+---
+
+<style>
+  footer {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--title-font);
+    bottom: 0;
+  }
+</style>
+<footer>
+  <Contact />
+  <div class="row distribute">
+    <Social platform={"github"} username={"quaeres"} />
+    <Social platform={"linkedin"} username={"quaeres"} />
+    <Social platform={"reddit"} username={"quaeres"} />
+    <!-- TODO: add thangs.fr + create a block layout-->
+  </div>
+  <div class="row distribute">
+    <p class="no-spacing">Quaeres {year}</p>
+    <a href="/legal">Legal</a>
+    <a href="/privacy">Privacy policy</a>
+    <a href="/cookie">Cookie policy</a>
+  </div>
+</footer>
