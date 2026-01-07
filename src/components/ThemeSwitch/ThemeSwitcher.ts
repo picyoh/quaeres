@@ -7,7 +7,6 @@ const switchLogo = document.getElementById("switchLogo");
 // Listen to click
 switchInput?.addEventListener("click", () => {
   if (switchInput?.checked) {
-    console.log(switchInput.checked);
     // Change Logo
     switchLogo?.classList.replace("dark-logo", "light-logo");
     // Switch to dark mode

@@ -1,9 +1,11 @@
 ---
 import Social from "./Social.astro";
+import Contact from "./Contact/Contact.astro";
 const year = new Date().getFullYear();
 ---
 
 <footer>
+    <Contact />
     <div class="row distribute">
         <Social platform={"github"} username={"quaeres"} />
         <Social platform={"linkedin"} username={"quaeres"} />

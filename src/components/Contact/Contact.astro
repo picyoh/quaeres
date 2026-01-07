@@ -1,0 +1,32 @@
+---
+import "./contact.css";
+---
+
+<section id="contact">
+  <h3>Contact</h3>
+  <form id="contactForm" name="contact form">
+    <label for="contactName"></label>
+    <input
+      type="text"
+      id="contactName"
+      name="contact name"
+      placeholder="Name"
+      required
+    />
+    <label for="contactEmail"></label>
+    <input
+      type="email"
+      id="contactEmail"
+      name="contact email"
+      placeholder="Email@mail.com"
+      required
+    />
+    <label for="contactMessage"></label>
+    <textarea
+      name="message"
+      id="contactMessage"
+      placeholder="Type your message here !"
+      required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
