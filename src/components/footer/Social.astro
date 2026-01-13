@@ -18,7 +18,7 @@ const logos = [
 ---
 
 <a href={`https://www.${platform}.com/${username}`}
-  >{logos.map((item, index) => {
+  >{logos.map((item) => {
     return(
       <>
       {item.name === platform ? <item.icon />: null}

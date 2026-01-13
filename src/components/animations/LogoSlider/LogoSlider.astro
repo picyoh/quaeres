@@ -1,0 +1,80 @@
+---
+import DevIcon from "devicons-astro";
+const { icons, size } = Astro.props;
+---
+
+<style>
+  .LogoSlider {
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+
+  .Logotrack {
+    width: 200%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    animation: scroll 5s linear infinite;
+  }
+
+  .iconCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .iconCont p {
+    margin: 0;
+  }
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<div class="LogoSlider">
+  <div class="Logotrack">
+    {
+      icons.map(
+        (icon: { name: string; variant: any; src: string | undefined }) => {
+          const title = icon.name.charAt(0).toUpperCase() + icon.name.slice(1);
+          const path = `./src/images/${icon.src}`;
+          return (
+            <div class="iconCont">
+              {icon.variant ? (
+                <DevIcon name={icon.name} variant={icon.variant} size={size} />
+              ) : (
+                <img
+                  src={path}
+                  alt={icon.name + " logo"}
+                  width="32"
+                  height="32"
+                />
+              )}
+              <p>{title}</p>
+            </div>
+          );
+        }
+      )
+    }
+  </div>
+</div>
+
+<script>
+  const sliders = document.querySelectorAll(".LogoSlider");
+  const tracks = document.querySelectorAll(".Logotrack");
+
+  tracks.forEach((track) => {
+    const logos = track.childNodes;
+    logos.forEach((logo) => {
+      const clone = logo.cloneNode(true) as Element;
+      clone.ariaHidden = "true";
+      track.appendChild(clone);
+    });
+  });
+</script>

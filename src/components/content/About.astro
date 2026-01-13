@@ -1,0 +1,52 @@
+---
+import LogoSlider from "../animations/LogoSlider/LogoSlider.astro";
+
+const preferedStack = [
+  { name: "html5", variant: "original" },
+  { name: "css3", variant: "original" },
+  { name: "typescript", variant: "original" },
+  { name: "javascript", variant: "original" },
+  { name: "react", variant: "original" },
+  { name: "astro", variant: "original" },
+  { name: "nodejs", variant: "original" },
+  { name: "bun", variant: "original" },
+];
+
+const others = [
+  { name: "redux", variant: "original" },
+  { name: "sass", variant: "original" },
+  { name: "tailwindcss", variant: "original" },
+  { name: "python", variant: "original" },
+  { name: "docker", variant: "original" },
+  { name: "opencv", variant: "original" },
+  { name: "qubesOs", src: "qubes-logo-home.svg" },
+  { name: "debian", variant: "original" },
+  { name: "obsidian", src: "obsidian-logo-gradient.svg" },
+  { name: "fedora", variant: "original" },
+];
+---
+
+<section id="About">
+  <h2>About</h2>
+  <p>
+    Welcome to the digital space where creative vision meets technical
+    engineering excellence. I am a passionate multidisciplinary professional
+    specializing in crafting intuitive user experiences and robust web
+    architectures. By bridging the gap between aesthetic design and functional
+    code, I deliver seamless end-to-end digital solutions. My expertise spans
+    modern frontend frameworks like React and Vue, ensuring dynamic and engaging
+    user interfaces. On the backend, I architect scalable systems using Node.js,
+    Python, and secure database management practices. I prioritize mobile-first,
+    responsive design to ensure your website performs perfectly across all
+    devices. Every project is built with a focus on high-speed performance,
+    accessibility, and modern SEO standards. I transform complex business
+    requirements into elegant, user-friendly applications that drive results. My
+    workflow is centered on writing clean, maintainable code paired with
+    minimalist and impactful design. Let’s collaborate to transform your ideas
+    into a powerful, high-performing digital reality.
+  </p>
+  <h3>Prefered stack and daily tools</h3>
+  <LogoSlider icons={preferedStack} size={32} />
+  <h3>But Also</h3>
+ <LogoSlider icons={others} size={32} />
+</section>
