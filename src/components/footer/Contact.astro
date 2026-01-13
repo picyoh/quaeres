@@ -1,10 +1,43 @@
 ---
-import "./contact.css";
+
 ---
 
-<section id="contact">
-  <h2>Contact</h2>
-  <form id="contactForm" name="contact form">
+<style>
+  #contact {
+    font-size: large;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    gap: .3rem;
+    width: 100%;
+  }
+
+  #contact label {
+    display: none;
+  }
+
+  input, textarea {
+    width: 80%;
+  }
+
+  #contactName,
+  #contactEmail {
+    padding: 0.3rem 0;
+  }
+
+  #contactMessage {
+    height: 5rem;
+  }
+
+  #contactSend {
+    padding: 0.25rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  /*TODO: set button*/
+</style>
+<>
+  <form id="contact" name="contact form">
     <label for="contactName"></label>
     <input
       type="text"
@@ -29,4 +62,4 @@ import "./contact.css";
       required></textarea>
     <button id="contactSend" type="submit">Send</button>
   </form>
-</section>
+</>

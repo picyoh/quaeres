@@ -1,29 +1,52 @@
 ---
 import Social from "../components/footer/Social.astro";
-import Contact from "../components/footer/Contact/Contact.astro";
+import Contact from "../components/footer/Contact.astro";
 const year = new Date().getFullYear();
 ---
 
 <style>
   footer {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     font-family: var(--title-font);
+  }
+  
+  .fix-bottom {
+    position: absolute;
+    z-index: 1;
     bottom: 0;
+    width: 100%;
+    text-align: center;
   }
 </style>
-<footer>
-  <Contact />
-  <div class="row distribute">
-    <Social platform={"github"} username={"quaeres"} />
-    <Social platform={"linkedin"} username={"quaeres"} />
-    <Social platform={"reddit"} username={"quaeres"} />
-    <!-- TODO: add thangs.fr + create a block layout-->
+<footer class="lgt-bg">
+  <div class="row">
+    <div class="column s-gap m-flex">
+      <h4>Follow me</h4>
+      <p>You can follow me :</p>
+      <div class="row centered s-gap">
+        <Social platform={"github"} username={"quaeres"} />
+        <Social platform={"linkedin"} username={"quaeres"} />
+        <Social platform={"reddit"} username={"quaeres"} />
+        <!-- TODO: add thangs.fr-->
+      </div>
+    </div>
+    <div class="column s-gap m-flex">
+      <h4>Works</h4>
+      <a href="#ComputerVision">Computer vision</a>
+      <a href="#Components">Components</a>
+      <a href="#Experiments">Experiments</a>
+    </div>
+    <div class="column s-gap m-flex">
+      <h4>Ressources</h4>
+      <a href="#legal">Legal</a>
+      <a href="#privacy">Privacy policy</a>
+      <a href="#cookie">Cookie policy</a>
+    </div>
+    <div class="column l-flex drk-bg">
+      <h4>Contact</h4>
+      <Contact />
+    </div>
   </div>
-  <div class="row distribute">
-    <p class="no-spacing">Quaeres {year}</p>
-    <a href="/legal">Legal</a>
-    <a href="/privacy">Privacy policy</a>
-    <a href="/cookie">Cookie policy</a>
-  </div>
+  <p class="no-spacing fix-bottom">Quaeres {year}</p>
 </footer>

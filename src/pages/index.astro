@@ -7,6 +7,22 @@ import Content from "../layouts/Content.astro";
 import Footer from "../layouts/Footer.astro";
 ---
 
+<style>
+  html {
+    height: 100%;
+  }
+
+  body {
+    position: relative;
+    box-sizing: border-box;
+    font-family: var(--text-font);
+    color: var(--font-color);
+    background: radial-gradient(circle 4px, var(--dark-neutral), var(--neutral))
+      round;
+    background-size: 48px 48px;
+    background-position: 24px 24px;
+  }
+</style>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -15,7 +31,7 @@ import Footer from "../layouts/Footer.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Quaeres</title>
   </head>
-  <body>
+  <body class="no-spacing">
     <Header />
     <Content />
     <Footer />

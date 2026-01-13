@@ -31,8 +31,6 @@ const { icons, size } = Astro.props;
   .Logotrack {
     width: 200%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     animation: scroll 15s linear infinite;
   }
 
@@ -103,11 +101,9 @@ const { icons, size } = Astro.props;
   // Hover animation on icons
   tracks.forEach((track) => {
     track.addEventListener("mouseover", (e) => {
-      e.preventDefault();
       track.style.animationPlayState = "paused";
       const iconCont = e.target as HTMLElement;
       iconCont.style.scale = "1.5";
-      console.log(iconCont)
     });
     track.addEventListener("mouseout", (e) => {
       track.removeAttribute("style");
