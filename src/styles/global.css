@@ -7,7 +7,7 @@
     /* Floral White */
     --neutral: #fffaf0;
     /* Ivory Mist */
-    --dark-neutral: #fff6df;
+    --dark-neutral: #fff1cc;
     /* Dusty Denim */
     --seconday: #5d89ba;
     /* Space Indigo */
@@ -98,10 +98,9 @@ body {
     box-sizing: border-box;
     margin: 2rem;
     font-family: var(--text-font);
-    background-color: var(--neutral);
     color: var(--font-color);
     background:
-        radial-gradient(circle 4px, var(--dark-neutral) , transparent) round;
+        radial-gradient(circle 4px, var(--dark-neutral) , var(--neutral)) round;
     background-size: 48px 48px;
     background-position: 24px 24px;
 }

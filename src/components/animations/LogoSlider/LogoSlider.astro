@@ -5,8 +5,27 @@ const { icons, size } = Astro.props;
 
 <style>
   .LogoSlider {
-    overflow: hidden;
-    margin: 2rem 0;
+    position: relative;
+    overflow-x: hidden;
+    padding: 2rem 0
+  }
+
+  .LogoSlider::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      to left,
+      var(--neutral),
+      transparent 10%,
+      transparent 95%,
+      var(--neutral)
+    );
   }
 
   .Logotrack {
@@ -18,13 +37,18 @@ const { icons, size } = Astro.props;
   }
 
   .iconCont {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all .3s;
   }
 
   .iconCont p {
-    margin: 0;
+    margin: 0.5rem;
+  }
+  .iconCont * {
+    pointer-events: none;
   }
 
   @keyframes scroll {
@@ -66,15 +90,29 @@ const { icons, size } = Astro.props;
 </div>
 
 <script>
-  const sliders = document.querySelectorAll(".LogoSlider");
-  const tracks = document.querySelectorAll(".Logotrack");
-
+  const tracks = document.querySelectorAll<HTMLElement>(".Logotrack");
+  // Duplicate icons Nodes for the infinite loop
   tracks.forEach((track) => {
     const logos = track.childNodes;
     logos.forEach((logo) => {
-      const clone = logo.cloneNode(true) as Element;
+      const clone = logo.cloneNode(true) as HTMLElement;
       clone.ariaHidden = "true";
       track.appendChild(clone);
+    });
+  });
+  // Hover animation on icons
+  tracks.forEach((track) => {
+    track.addEventListener("mouseover", (e) => {
+      e.preventDefault();
+      track.style.animationPlayState = "paused";
+      const iconCont = e.target as HTMLElement;
+      iconCont.style.scale = "1.5";
+      console.log(iconCont)
+    });
+    track.addEventListener("mouseout", (e) => {
+      track.removeAttribute("style");
+      const iconCont = e.target as HTMLElement;
+      iconCont.removeAttribute("style");
     });
   });
 </script>
