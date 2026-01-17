@@ -1,5 +1,6 @@
 ---
-import Navigation from "../components/header/Navigation/Navigation.astro";
+import Navigation from "../components/header/Navigation.astro";
+import Logo from "../images/Quaeres.svg";
 ---
 
 <style>
@@ -13,9 +14,31 @@ import Navigation from "../components/header/Navigation/Navigation.astro";
   header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1024) {
+    .logo {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  @media screen and (min-width:1000){
+    .logo{
+      display: none;
+    }
   }
 </style>
 <header class="m-padding">
-  <a href="/"><h1 class="no-spacing">QUAERES</h1></a>
+  <a href="/">
+    <h1 class="no-spacing hidden">QUAERES</h1>
+    <Logo class="logo" />
+  </a>
   <Navigation />
 </header>

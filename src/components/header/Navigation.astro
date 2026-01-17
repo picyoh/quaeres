@@ -1,0 +1,124 @@
+---
+import ThemeSwitcher from "./ThemeSwitcher.astro";
+---
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--title-font);
+    height: 32px;
+    max-width: 100%;
+  }
+
+  #burger {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    transition: var(--basic-transition);
+  }
+
+  #burger span {
+    width: 85%;
+    position: absolute;
+    border: var(--button-border);
+    background-color: var(--font-color);
+    height: 1px;
+    top: 45%;
+    transition: var(--basic-transition);
+  }
+
+  #burger span:first-of-type {
+    top: 10%;
+  }
+
+  #burger span:last-of-type {
+    top: 75%;
+  }
+
+  #burger input:checked ~ span:first-of-type {
+    top: 45%;
+    transform: rotate(45deg);
+  }
+
+  #burger input:checked ~ span:nth-child(3) {
+    opacity: 0;
+  }
+
+  #burger input:checked ~ span:last-of-type {
+    top: 45%;
+    transform: rotate(-45deg);
+  }
+
+  #burger:has(input:checked) + ul {
+    display: flex;
+  }
+
+  #burgerCheckbox {
+    opacity: 0;
+  }
+
+  #menu {
+    width: 5rem;
+    display: none;
+    position: absolute;
+    flex-flow: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--light-shadow);
+    top: 5rem;
+    right: 2.5rem
+  }
+
+  #menu li {
+    list-style: none;
+  }
+
+  #menu a {
+    width: 5rem;
+    font-size: var(--nav-size);
+    transition: var(--basic-transition);
+  }
+
+  #menu a:hover {
+    color: var(--neutral);
+    background-color: var(--shadow);
+    transition: var(--basic-transition);
+  }
+
+  .sub-menu {
+    display: none;
+  }
+</style>
+<nav>
+  <label id="burger" for="burgerCheckbox" class="icon-size">
+    <input id="burgerCheckbox" type="checkbox" class="no-spacing icon-size" />
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <ul id="menu" class="no-spacing row space-around">
+    <li class="menu-list">
+      <a href="#works">Works</a>
+      <ul class="sub-menu no-spacing">
+        <li>
+          <a href="#computervision">Computer vision</a>
+        </li>
+        <li>
+          <a href="#components">Components</a>
+        </li>
+        <li>
+          <a href="#experiments">Experiments</a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#about">About</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+  <ThemeSwitcher />
+</nav>

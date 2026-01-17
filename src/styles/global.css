@@ -52,6 +52,10 @@
     padding: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 .global-padding {
     padding: 2rem;
 }
@@ -65,6 +69,10 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+}
+
+.space-around {
+    justify-content: space-around;
 }
 
 .centered {
@@ -89,6 +97,11 @@
 .m-size {
     width: 2rem;
     height: 2rem;
+}
+
+.icon-size {
+    width: 24px;
+    height: 24px;
 }
 
 .s-gap {

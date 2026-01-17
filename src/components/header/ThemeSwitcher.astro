@@ -1,0 +1,69 @@
+---
+
+---
+
+<style>
+  .theme-switch {
+    position: relative;
+    display: inline-block;
+  }
+
+  #switchInput {
+    appearance: none;
+    position: absolute;
+    z-index: 2;
+    border: var(--button-border);
+    border-radius: 50%;
+  }
+
+  .slider {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  #switchIcon {
+    cy: 50%;
+    r: 33%;
+    transition: var(--basic-transition);
+  }
+
+  .dark-logo {
+    cx: 65%;
+    fill: var(--font-color);
+  }
+
+  .light-logo {
+    cx: 50%;
+    fill: var(--primary);
+  }
+</style>
+<>
+  <label class="theme-switch icon-size">
+    <input type="checkbox" id="switchInput" class="no-spacing icon-size" />
+    <svg class="slider icon-size">
+      <circle id="switchIcon" class="dark-logo s-size"></circle>
+    </svg>
+  </label>
+</>
+<script>
+  // Get switch checkbox
+  const switchInput = document.getElementById(
+    "switchInput"
+  ) as HTMLInputElement | null;
+  // Get svg circle
+  const switchIcon = document.getElementById("switchIcon");
+  // Listen to click
+  switchInput?.addEventListener("click", () => {
+    if (switchInput?.checked) {
+      // Change Logo
+      switchIcon?.classList.replace("dark-logo", "light-logo");
+      // Switch to dark mode
+    } else {
+      // Change Logo
+      switchIcon?.classList.replace("light-logo", "dark-logo");
+      // Switch to light mode
+    }
+  });
+</script>
