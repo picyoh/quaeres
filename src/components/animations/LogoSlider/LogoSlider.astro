@@ -2,7 +2,6 @@
 import DevIcon from "devicons-astro";
 const { icons, size } = Astro.props;
 ---
-
 <style>
   .LogoSlider {
     position: relative;
@@ -60,6 +59,7 @@ const { icons, size } = Astro.props;
 </style>
 
 <div class="LogoSlider">
+<!-- TODO: check on mobile -->
   <div class="Logotrack">
     {
       icons.map(

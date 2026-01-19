@@ -1,7 +1,7 @@
 ---
 import LogoSlider from "../animations/LogoSlider/LogoSlider.astro";
 
-const preferedStack = [
+const stack = [
   { name: "html5", variant: "original" },
   { name: "css3", variant: "original" },
   { name: "javascript", variant: "original" },
@@ -9,27 +9,19 @@ const preferedStack = [
   { name: "react", variant: "original" },
   { name: "astro", variant: "original" },
   { name: "nodejs", variant: "original" },
-];
-
-const webTech = [
-  { name: "python", variant: "original" },
-  { name: "mongodb", variant: "original" },
-  { name: "express", variant: "original" },
-  { name: "redux", variant: "original" },
-  { name: "sass", variant: "original" },
-  { name: "tailwindcss", variant: "original" },
   { name: "bun", variant: "original" },
-  { name: "docker", variant: "original" },
 ];
 
 const others = [
+  { name: "python", variant: "original" },
+  { name: "docker", variant: "original" },
+  { name: "mongodb", variant: "original" },
+  { name: "express", variant: "original" },
+  { name: "redux", variant: "original" },
+  { name: "tailwindcss", variant: "original" },
   { name: "bash", variant: "original" },
-  { name: "qubesOs", src: "qubes-logo-home.svg" },
-  { name: "debian", variant: "original" },
-  { name: "fedora", variant: "original" },
   { name: "saltProject", src: "SaltProject_Logomark_teal.png" },
   { name: "opencv", variant: "original" },
-  { name: "hackTheBox", src: "hackthebox.svg" },
 ];
 ---
 
@@ -45,8 +37,7 @@ const others = [
     I transform complex business requirements into elegant, user-friendly applications
     that drive results.
   </p>
-  <LogoSlider icons={preferedStack} size={32} />
-  <h3>Stacks</h3>
+  <h3>Stack</h3>
   <p>
     My expertise spans modern frontend frameworks like React or Astro, ensuring
     dynamic and engaging user interfaces. <br />Every project is built with a
@@ -56,7 +47,7 @@ const others = [
     and impactful design.<br /> On the backend, I architect scalable systems using
     Node.js, Python, and secure database management practices.<br />
   </p>
-  <LogoSlider icons={webTech} size={32} />
+  <LogoSlider icons={stack} size={32} />
   <h3>But Also</h3>
   <p>
     I am curious and I like new technologies, which led me to discover and use

@@ -17,12 +17,17 @@ const logos = [
 ];
 ---
 
-<a href={`https://www.${platform}.com/${username}`}
-  >{logos.map((item) => {
-    return(
-      <>
-      {item.name === platform ? <item.icon />: null}
-      </>
-    )
-  })}</a
->
+<a href={`https://www.${platform}.com/${username}`} class="row s-gap">
+{
+    logos.map((item) => {
+      return (
+        <>
+          {item.name === platform ? 
+          <item.icon /> 
+          <p class="no-spacing">{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</p>
+          : null}
+        </>
+      );
+    })
+  }
+</a>
