@@ -51,13 +51,8 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     transform: rotate(-45deg);
   }
 
-  #burger:has(input:not(checked)) + ul {
-    left: -100%;
-    animation: slide-out 2s ease-in-out;
-  }
   #burger:has(input:checked) + ul {
     left: 0;
-    animation: slide-in 2s ease-in-out;
   }
 
   #burgerCheckbox {
@@ -75,23 +70,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     background-color: var(--light-shadow);
     top: 5rem;
     left: -100%;
-  }
-
-  @keyframes slide-in {
-    from {
-      left: -100%;
-    }
-    to {
-      left: 0;
-    }
-  }
-  @keyframes slide-out {
-    from {
-      left: 0;
-    }
-    to {
-      left: -100%;
-    }
+    transition: all 2s;
   }
 
   #menu li {
