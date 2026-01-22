@@ -1,5 +1,6 @@
 ---
 import ThemeSwitcher from "./ThemeSwitcher.astro";
+//TODO: i18n + smooth scroll spa + insert ghp + responsive
 ---
 
 <style>
@@ -8,8 +9,6 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     align-items: center;
     gap: 1rem;
     font-family: var(--title-font);
-    height: 32px;
-    max-width: 100%;
   }
 
   #burger {
@@ -52,7 +51,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
   }
 
   #burger:has(input:checked) + ul {
-    left: 0;
+    left: 10%;
   }
 
   #burgerCheckbox {
@@ -61,7 +60,7 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
 
   #menu {
     overflow-x: hidden;
-    max-width: 100%;
+    max-width: 80%;
     display: flex;
     position: absolute;
     flex-flow: row;

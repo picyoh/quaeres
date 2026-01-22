@@ -3,63 +3,139 @@
 ---
 
 <style>
-  #contact {
+  #contactForm {
     font-size: large;
     display: flex;
     flex-flow: column;
     align-items: center;
-    gap: .3rem;
-    width: 100%;
+    width: 80%;
+    gap: 0.3rem;
+    padding: 0 2rem;
   }
 
-  #contact label {
+  #contactForm label {
     display: none;
   }
 
-  input, textarea {
-    width: 80%;
-  }
-
-  #contactName,
-  #contactEmail {
+  input,
+  textarea {
+    width: 100%;
+    border: var(--field-border);
     padding: 0.3rem 0;
   }
 
-  #contactMessage {
+  input:valid {
+    border: 2px outset green;
+  }
+
+  input:not(:placeholder-shown):invalid {
+    border: 2px outset red;
+  }
+
+  #Message {
+    padding: 0;
     height: 5rem;
   }
 
   #contactSend {
     padding: 0.25rem 1.25rem;
     margin-bottom: 1rem;
+    border: var(--field-border);
   }
-
-  /*TODO: set button*/
 </style>
 <>
-  <form id="contact" name="contact form">
-    <label for="contactName"></label>
+  <form id="contactForm" name="contact form">
+    <label for="contactName">Name: *</label>
     <input
       type="text"
-      id="contactName"
+      id="Name"
       name="contact name"
       placeholder="Name"
+      minlength="3"
+      maxlength="24"
+      pattern="[A-Za-z0-9 \\.\\-]+"
       required
     />
-    <label for="contactEmail"></label>
+    <label for="contactEmail">Email: *</label>
     <input
       type="email"
-      id="contactEmail"
+      id="Email"
       name="contact email"
       placeholder="Email@mail.com"
+      pattern="[a-z0-9._%+\\-]+@[a-z0-9.\\-]+\.[a-z]{2,}"
       required
     />
-    <label for="contactMessage"></label>
+    <label for="contactMessage">Message: *</label>
     <textarea
       name="message"
-      id="contactMessage"
+      id="Message"
       placeholder="Type your message here !"
       required></textarea>
     <button id="contactSend" type="submit">Send</button>
   </form>
 </>
+
+<script>
+  // set custom validity
+  function checkInput(input: HTMLInputElement | HTMLTextAreaElement) {
+    // reset
+    if (input.validity.customError) {
+      input.setCustomValidity("");
+    }
+    // Text area
+    if (input.type === "textarea") {
+      const reg = /^[A-Za-z0-9 ?!.,:"-+=%$()]+$/g;
+      const test = reg.test(input.value);
+      if (!test) {
+        input.setCustomValidity(
+          "Remove special characters from your message",
+        );
+      }
+    }
+    // Too short
+    if (input.validity.tooShort) {
+      input.setCustomValidity(
+        `${input.id} may have ${input.minLength} characters minimum`,
+      );
+    }
+    // Too long
+    if (input.validity.tooLong) {
+      input.setCustomValidity(
+        `${input.id} may have ${input.maxLength} characters maximum`,
+      );
+    }
+    // Wrong pattern
+    if (input.validity.patternMismatch) {
+      if (input.id === "Name") {
+        // name
+        input.setCustomValidity(
+          `${input.id} can't contain special characters except "." and "-"`,
+        );
+      } else {
+        // email
+        input.setCustomValidity(`Wrong ${input.id} format`);
+      }
+    }
+    input.reportValidity();
+  }
+  // Get form element
+  const form = document.getElementById("contact") as HTMLFormElement;
+  const inputs = form?.querySelectorAll("input");
+  inputs?.forEach((input) => {
+    // Check and set message on inputs
+    input.addEventListener("input", (e) => {
+      checkInput(input);
+    });
+  });
+  //
+  const textarea = document.querySelector("textarea");
+  textarea?.addEventListener("input", (e) => {
+    checkInput(textarea);
+  });
+
+  // Handling form
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    
+  });
+</script>
