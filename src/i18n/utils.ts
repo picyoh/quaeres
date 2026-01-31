@@ -6,7 +6,7 @@ export function getLangFromBrowser(navLang: string) {
     return defaultLang;
 }
 
-export function useTranslation(lang: keyof typeof ui) {
+export function useTranslations(lang: keyof typeof ui) {
     return function t(key: keyof typeof ui[typeof defaultLang]){
         return ui[lang][key] || ui[defaultLang][key];
     }

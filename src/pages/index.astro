@@ -5,7 +5,8 @@ import "../styles/global.css";
 import Header from "../layouts/header.astro";
 import Content from "../layouts/content.astro";
 import Footer from "../layouts/footer.astro";
-const lang = navigator.language.split("-")[0];
+import { getLangFromBrowser } from "../i18n/utils";
+const lang = getLangFromBrowser(navigator.language);
 ---
 
 <style>

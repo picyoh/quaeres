@@ -1,6 +1,9 @@
 ---
 import Social from "../components/footer/Social.astro";
 import Contact from "../components/footer/Contact.astro";
+import { getLangFromBrowser, useTranslations } from "../i18n/utils";
+const lang = getLangFromBrowser(navigator.language);
+const t = useTranslations(lang);
 const year = new Date().getFullYear();
 ---
 
@@ -37,7 +40,7 @@ const year = new Date().getFullYear();
     <Contact />
   </div>
   <div class="column s-gap">
-    <h4>Follow me</h4>
+    <h4>{t('foo.follow')}</h4>
     <div class="column s-gap">
       <Social platform={"github"} username={"quaeres"} />
       <Social platform={"linkedin"} username={"quaeres"} />
@@ -47,9 +50,9 @@ const year = new Date().getFullYear();
   </div>
   <div class="column s-gap">
     <h4>Ressources</h4>
-    <a href="#legal">Legal</a>
-    <a href="#privacy">Privacy policy</a>
-    <a href="#cookie">Cookie policy</a>
+    <a href="#legal">{t('foo.legal')}</a>
+    <a href="#privacy">{t('foo.privacy')}</a>
+    <a href="#cookie">{t('foo.cookie')}</a>
   </div>
   <p class="no-spacing fix-bottom">Quaeres {year}</p>
 </footer>

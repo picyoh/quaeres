@@ -1,5 +1,8 @@
 ---
+import { getLangFromBrowser, useTranslations } from "../../i18n/utils";
 
+const lang = getLangFromBrowser(navigator.language);
+const t = useTranslations(lang);
 ---
 
 <style>
@@ -35,7 +38,6 @@
   }
 
   #additionnal_info {
-    /* Honeypot field */
     display: none;
   }
 
@@ -59,7 +61,7 @@
       type="text"
       id="Name"
       name="contact name"
-      placeholder="Name"
+      placeholder={t('foo.name')}
       minlength="3"
       maxlength="24"
       pattern="[A-Za-z0-9 \\.\\-]+"
@@ -80,9 +82,9 @@
     <textarea
       name="message"
       id="Message"
-      placeholder="Type your message here !"
+      placeholder={t('foo.message')}
       required></textarea>
-    <button id="contactSend" type="submit">Send</button>
+    <button id="contactSend" type="submit">{t('foo.send')}</button>
   </form>
 </>
 

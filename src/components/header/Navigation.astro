@@ -1,11 +1,11 @@
 ---
-import { useTranslation } from "../../i18n/utils";
+import { getLangFromBrowser, useTranslations } from "../../i18n/utils";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
 //TODO: i18n use collection 
 // smooth scroll spa + insert ghp + responsive
 
-const lang = navigator.language.split("-")[0];
-const t = useTranslation("fr");
+const lang = getLangFromBrowser(navigator.language);
+const t = useTranslations(lang);
 ---
 
 <style>
