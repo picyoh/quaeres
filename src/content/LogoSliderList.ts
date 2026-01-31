@@ -1,0 +1,22 @@
+export const stack = [
+  { name: "html5", variant: "original" },
+  { name: "css3", variant: "original" },
+  { name: "javascript", variant: "original" },
+  { name: "typescript", variant: "original" },
+  { name: "react", variant: "original" },
+  { name: "astro", variant: "original" },
+  { name: "nodejs", variant: "original" },
+  { name: "bun", variant: "original" },
+];
+
+export const others = [
+  { name: "python", variant: "original" },
+  { name: "docker", variant: "original" },
+  { name: "mongodb", variant: "original" },
+  { name: "express", variant: "original" },
+  { name: "redux", variant: "original" },
+  { name: "tailwindcss", variant: "original" },
+  { name: "bash", variant: "original" },
+  { name: "saltProject", src: "SaltProject_Logomark_teal.png" },
+  { name: "opencv", variant: "original" },
+];

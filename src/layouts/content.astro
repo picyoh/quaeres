@@ -1,0 +1,18 @@
+---
+import Hero from "../components/content/hero.astro";
+import Projects from "../components/content/projects.astro";
+import { getEntry, render } from "astro:content";
+import { getLangFromBrowser } from "../i18n/utils";
+const lang = getLangFromBrowser(navigator.language);
+const about = await getEntry(lang, "about");
+const { Content } = await render(about);
+---
+
+<main class="m-padding">
+  <Hero />
+  <section id="About">
+    <h2>{about.data.title}</h2>
+    <Content />
+  </section>
+  <Projects />
+</main>

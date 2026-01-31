@@ -1,6 +1,11 @@
 ---
+import { useTranslation } from "../../i18n/utils";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
-//TODO: i18n + smooth scroll spa + insert ghp + responsive
+//TODO: i18n use collection 
+// smooth scroll spa + insert ghp + responsive
+
+const lang = navigator.language.split("-")[0];
+const t = useTranslation("fr");
 ---
 
 <style>
@@ -100,25 +105,25 @@ import ThemeSwitcher from "./ThemeSwitcher.astro";
     <span></span>
   </label>
   <ul id="menu" class="no-spacing row space-around">
+    <li>
+      <a href="#about">{t('nav.about')}</a>
+    </li>
     <li class="menu-list">
-      <a href="#works">Works</a>
+      <a href="#projects">{t('nav.projects')}</a>
       <ul class="sub-menu no-spacing">
         <li>
-          <a href="#computervision">Computer vision</a>
+          <a href="#computervision">{t('nav.cv')}</a>
         </li>
         <li>
-          <a href="#components">Components</a>
+          <a href="#components">{t('nav.components')}</a>
         </li>
         <li>
-          <a href="#experiments">Experiments</a>
+          <a href="#experiments">{t('nav.experiments')}</a>
         </li>
       </ul>
     </li>
     <li>
-      <a href="#about">About</a>
-    </li>
-    <li>
-      <a href="#contact">Contact</a>
+      <a href="#contact">{t('nav.contact')}</a>
     </li>
   </ul>
   <ThemeSwitcher />

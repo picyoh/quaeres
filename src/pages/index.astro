@@ -2,9 +2,10 @@
 import "@fontsource-variable/alumni-sans";
 import "@fontsource/lato";
 import "../styles/global.css";
-import Header from "../layouts/Header.astro";
-import Content from "../layouts/Content.astro";
-import Footer from "../layouts/Footer.astro";
+import Header from "../layouts/header.astro";
+import Content from "../layouts/content.astro";
+import Footer from "../layouts/footer.astro";
+const lang = navigator.language.split("-")[0];
 ---
 
 <style>
@@ -23,7 +24,7 @@ import Footer from "../layouts/Footer.astro";
     background-position: 24px 24px;
   }
 </style>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/quaeres/favicon.svg" />
