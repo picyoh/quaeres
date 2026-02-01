@@ -1,8 +1,10 @@
 ---
 import { getLangFromBrowser, useTranslations } from "../../i18n/utils";
 import ThemeSwitcher from "./ThemeSwitcher.astro";
-//TODO: i18n use collection 
-// smooth scroll spa + insert ghp + responsive
+//TODO:
+// smooth scroll spa
+// insert ghp
+// responsive
 
 const lang = getLangFromBrowser(navigator.language);
 const t = useTranslations(lang);
@@ -106,7 +108,7 @@ const t = useTranslations(lang);
   </label>
   <ul id="menu" class="no-spacing row space-around">
     <li>
-      <a href="#about">{t('nav.about')}</a>
+      <a href="./about">{t('nav.about')}</a>
     </li>
     <li class="menu-list">
       <a href="#projects">{t('nav.projects')}</a>

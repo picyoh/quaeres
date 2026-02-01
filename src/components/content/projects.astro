@@ -1,9 +1,16 @@
 ---
-
+import { getLangFromBrowser, useTranslations } from "../../i18n/utils";
+const lang = getLangFromBrowser(navigator.language);
+const t = useTranslations(lang);
+/*
+const response = await fetch("https://picyoh.github.io/OC-Ohmyfood/");
+const content = await response.text(); 
+*/
 ---
 
 <section id="projects">
-  <h2 id="computervision">Computer Vision</h2>
-  <h2 id="components">Components</h2>
-  <h2 id="experiments">Experiments</h2>
+  <h2 id="computervision">{t("nav.cv")}</h2>
+  <!-- <article set:html={content} -->
+  <h2 id="components">{t("nav.components")}</h2>
+  <h2 id="experiments">{t("nav.experiments")}</h2>
 </section>

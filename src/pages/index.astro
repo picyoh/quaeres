@@ -1,41 +1,11 @@
 ---
-import "@fontsource-variable/alumni-sans";
-import "@fontsource/lato";
-import "../styles/global.css";
+import Site from "../layouts/Site.astro";
 import Header from "../layouts/header.astro";
 import Content from "../layouts/content.astro";
 import Footer from "../layouts/footer.astro";
-import { getLangFromBrowser } from "../i18n/utils";
-const lang = getLangFromBrowser(navigator.language);
 ---
-
-<style>
-  html {
-    height: 100%;
-  }
-
-  body {
-    position: relative;
-    box-sizing: border-box;
-    font-family: var(--text-font);
-    color: var(--font-color);
-    background: radial-gradient(circle 4px, var(--dark-neutral), var(--neutral))
-      round;
-    background-size: 48px 48px;
-    background-position: 24px 24px;
-  }
-</style>
-<html lang={lang}>
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/quaeres/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Quaeres</title>
-  </head>
-  <body class="no-spacing">
-    <Header />
-    <Content />
-    <Footer />
-  </body>
-</html>
+<Site>
+  <Header />
+  <Content />
+  <Footer />
+</Site>

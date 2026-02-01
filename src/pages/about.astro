@@ -1,7 +1,4 @@
 ---
-import Hero from "../components/content/hero.astro";
-import Projects from "../components/content/projects.astro";
-
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 import LogoSlider from "../components/animations/LogoSlider/LogoSlider.astro";
@@ -24,9 +21,7 @@ if (!about) {
 }
 ---
 
-<main class="m-padding">
-  <Hero />
-  <section id="About" transition:animate="slide">
+<section id="About" transition:animate="slide">
     <h2>{t("nav.about")}</h2>
     {
       about.map(async (content: any) => {
@@ -43,5 +38,3 @@ if (!about) {
       })
     }
   </section>
-  <Projects />
-</main>
