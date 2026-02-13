@@ -64,6 +64,5 @@ matrix1.addEventListener("mouseenter", () => {
   anmCharId = requestAnimationFrame(animateChar);
 });
 matrix1.addEventListener("mouseleave", () => {
-  console.log("leave");
   cancelAnimationFrame(anmCharId);
 });

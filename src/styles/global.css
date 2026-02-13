@@ -136,3 +136,7 @@ a {
     text-decoration-line: none;
     color: var(--font-color);
 }
+
+ul {
+    list-style-type: none;
+}

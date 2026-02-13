@@ -1,8 +1,9 @@
 ---
 import Social from "../components/footer/Social.astro";
 import Contact from "../components/footer/Contact.astro";
-import { getLangFromBrowser, useTranslations } from "../i18n/utils";
-const lang = getLangFromBrowser(navigator.language);
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import LaguagePicker from "../components/footer/LaguagePicker.astro";
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const year = new Date().getFullYear();
 ---
@@ -53,6 +54,7 @@ const year = new Date().getFullYear();
     <a href="#legal">{t('foo.legal')}</a>
     <a href="#privacy">{t('foo.privacy')}</a>
     <a href="#cookie">{t('foo.cookie')}</a>
+    <LaguagePicker />
   </div>
   <p class="no-spacing fix-bottom">Quaeres {year}</p>
 </footer>

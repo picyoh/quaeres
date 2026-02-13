@@ -1,6 +1,6 @@
 ---
-import { getLangFromBrowser, useTranslations } from "../../i18n/utils";
-const lang = getLangFromBrowser(navigator.language);
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 /*
 const response = await fetch("https://picyoh.github.io/OC-Ohmyfood/");

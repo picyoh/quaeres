@@ -24,7 +24,7 @@ export const ui = {
     },
     fr: {
         'nav.about': 'A propos',
-        'nav.projects': 'Projects',
+        'nav.projects': 'Projets',
         'nav.cv': 'Computer Vision',
         'nav.components': "Composants",
         'nav.experiments': 'Expériences',

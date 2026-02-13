@@ -1,7 +1,7 @@
 ---
-import { getLangFromBrowser, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-const lang = getLangFromBrowser(navigator.language);
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
@@ -22,6 +22,7 @@ const t = useTranslations(lang);
 
   input,
   textarea {
+    background-color: var(--neutral);
     width: 100%;
     border: var(--field-border);
     padding: 0.3rem 0;
@@ -47,6 +48,7 @@ const t = useTranslations(lang);
   }
 
   #contactSend {
+    background-color: var(--neutral);
     padding: 0.25rem 1.25rem;
     margin-bottom: 1rem;
     border: var(--field-border);
@@ -159,9 +161,6 @@ const t = useTranslations(lang);
       );
       const message = textarea!.value;
       const encMessage = encodeURI(message) + `%0A` + encodeURI(encName);
-      console.log(
-        `mailto:contact@quaeres.fr?from=${encEmail}&subject=$Contact%20Form&${encMessage}`,
-      );
       window.location.href = `mailto:contact@quaeres.fr?subject=Quaeres%20Contact%20Form&body=${encMessage}`;
     }
   });

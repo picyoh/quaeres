@@ -8,8 +8,8 @@ import LogoSlider from "../components/animations/LogoSlider/LogoSlider.astro";
 import { stack, also } from "../content/about/logoList.json";
 export const size = 32;
 
-import { getLangFromBrowser, useTranslations } from "../i18n/utils";
-const lang = getLangFromBrowser(navigator.language);
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const about = (
   await getCollection("about", ({ id }: CollectionEntry<"about">) => {
@@ -26,7 +26,7 @@ if (!about) {
 
 <main class="m-padding">
   <Hero />
-  <section id="About" transition:animate="slide">
+  <section id="About">
     <h2>{t("nav.about")}</h2>
     {
       about.map(async (content: any) => {

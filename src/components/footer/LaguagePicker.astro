@@ -1,3 +1,34 @@
 ---
-import { languages } from '../../i18n/ui';
+import { languages } from "../../i18n/ui";
+import { getLangFromUrl } from "../../i18n/utils";
+const [path,] = Astro.url.pathname.split("/");
+const urlLang = getLangFromUrl(Astro.url);
+console.log(languages[urlLang])
 ---
+<style>
+  #languagePicker li {
+    background-color: var(--neutral);
+    padding: .3rem;
+    min-width: 4.3rem;
+    text-align: center;
+  }
+  #languagePicker:hover #langOptions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>
+<ul id="languagePicker" class="no-spacing column space-around">
+  <li>{`${languages[urlLang]}`} &#9662</li>
+  <ul id="langOptions" class="no-spacing hidden">
+ {
+    Object.entries(languages).map(([lang, label]) => (
+      <li>
+        <a id={`${lang}`} href={`${path}${lang}/`}>
+          {`${label} (${lang.toUpperCase()})`}
+        </a>
+      </li>
+    ))
+  }
+  </ul>
+</ul>
