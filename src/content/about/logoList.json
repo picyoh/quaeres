@@ -7,17 +7,18 @@
     { "name": "react", "variant": "original" },
     { "name": "astro", "variant": "original" },
     { "name": "nodejs", "variant": "original" },
-    { "name": "bun", "variant": "original" }
+    { "name": "tailwindcss", "variant": "original" }
   ],
   "also": [
+    { "name": "bun", "variant": "original" },
     { "name": "python", "variant": "original" },
     { "name": "docker", "variant": "original" },
     { "name": "mongodb", "variant": "original" },
     { "name": "express", "variant": "original" },
     { "name": "redux", "variant": "original" },
-    { "name": "tailwindcss", "variant": "original" },
-    { "name": "bash", "variant": "original" },
+    { "name": "qubesOs", "src": "qubes-logo-home.svg"},
     { "name": "saltProject", "src": "SaltProject_Logomark_teal.png" },
-    { "name": "opencv", "variant": "original" }
+    { "name": "opencv", "variant": "original" },
+    { "name": "hackTheBox", "src": "hackthebox.svg" }
   ]
 }

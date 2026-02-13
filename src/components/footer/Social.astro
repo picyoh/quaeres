@@ -1,7 +1,12 @@
 ---
-import { FaGithub, FaLinkedin, FaReddit } from "react-icons/fa";
+import { FaCode, FaGithub, FaLinkedin, FaReddit } from "react-icons/fa";
+import { SiKofi } from "react-icons/si";
 const { platform, username } = Astro.props;
 const logos = [
+  {
+    name: "thang.fr",
+    icon: FaCode,
+  },
   {
     name: "github",
     icon: FaGithub,
@@ -14,6 +19,10 @@ const logos = [
     name: "reddit",
     icon: FaReddit,
   },
+  {
+    name: "ko-fi",
+    icon: SiKofi,
+  }
 ];
 ---
 

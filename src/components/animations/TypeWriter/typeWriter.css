@@ -1,10 +1,7 @@
-:root {
+.typewriter {
     --animps: paused;
     --type-steps: 0;
     --type-chars: 0ch;
-}
-
-.typewriter {
     font-family: monospace;
     font-weight: var(--nav-weight);
     font-size: 2rem;

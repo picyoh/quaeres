@@ -43,7 +43,7 @@
     /* Animations */
     --basic-transition: all 1s ease-in-out;
 }
-
+/* TODO: add dark mode */
 @media (prefers-color-scheme: dark) {}
 
 /* Basic Classes */

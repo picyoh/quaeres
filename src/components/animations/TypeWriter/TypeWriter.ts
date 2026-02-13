@@ -1,11 +1,13 @@
 let prevIndex = 0;
 // Get word list
 const wordList: NodeListOf<HTMLElement> = document.querySelectorAll(".word");
+// Get typewriter container
+const typeWriter = document.getElementById("typeWriter");
 // Get first word to animate
 const typeCursor = document.getElementById("typeCursor");
 // Adjust animation for first time
 adjustAnimation(typeCursor!);
-document.documentElement.style.setProperty("--animps", "running");
+typeWriter?.style.setProperty("--animps", "running");
 // Loop through list
 wordList.forEach((word, i) => {
   // Listen to animation end
@@ -27,6 +29,6 @@ wordList.forEach((word, i) => {
 
 function adjustAnimation(word: Element) {
   const wordLength = word.textContent.length.toString();
-  document.documentElement.style.setProperty("--type-steps", wordLength);
-  document.documentElement.style.setProperty("--type-chars", wordLength + "ch");
+  typeWriter?.style.setProperty("--type-steps", wordLength);
+  typeWriter?.style.setProperty("--type-chars", wordLength + "ch");
 }
