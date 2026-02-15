@@ -1,8 +1,9 @@
 ---
-import Social from "../components/footer/Social.astro";
-import Contact from "../components/footer/Contact.astro";
+import Social from "../components/Social.astro";
+import Contact from "../components/Contact.astro";
+import LaguagePicker from "../components/LaguagePicker.astro";
+
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
-import LaguagePicker from "../components/footer/LaguagePicker.astro";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const year = new Date().getFullYear();
@@ -35,13 +36,14 @@ const year = new Date().getFullYear();
     text-align: center;
   }
 </style>
+
 <footer class="lgt-bg">
   <div id="contact" class="column drk-bg">
     <h4>Contact</h4>
     <Contact />
   </div>
   <div class="column s-gap">
-    <h4>{t('foo.follow')}</h4>
+    <h4>{t("foo.follow")}</h4>
     <div class="column s-gap">
       <Social platform={"thang.fr"} username="" />
       <Social platform={"ko-fi"} username={"9nvh2"} />
@@ -51,9 +53,9 @@ const year = new Date().getFullYear();
   </div>
   <div class="column s-gap">
     <h4>Ressources</h4>
-    <a href="#legal">{t('foo.legal')}</a>
-    <a href="#privacy">{t('foo.privacy')}</a>
-    <a href="#cookie">{t('foo.cookie')}</a>
+    <a href="#legal">{t("foo.legal")}</a>
+    <a href="#privacy">{t("foo.privacy")}</a>
+    <a href="#cookie">{t("foo.cookie")}</a>
     <LaguagePicker />
   </div>
   <p class="no-spacing fix-bottom">Quaeres {year}</p>

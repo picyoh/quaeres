@@ -1,18 +1,18 @@
 ---
 import Base from "../../layouts/Base.astro";
-import Header from "../../layouts/header.astro";
-import Content from "../../layouts/content.astro";
-import Footer from "../../layouts/footer.astro";
-
-export async function getStaticPaths() {
-  return [{ params: { lang: "en" } }, { params: { lang: "fr" } }];
-}
-
-const { lang } = Astro.params;
+import Header from "../../layouts/Header.astro";
+import Hero from "../../layouts/Hero.astro";
+import About from "../../layouts/About.astro";
+import Projects from "../../layouts/Projects.astro"
+import Footer from "../../layouts/Footer.astro";
 ---
 
 <Base>
   <Header />
-  <Content />
+  <main class="m-padding">
+    <Hero />
+    <About />
+    <Projects />
+  </main>
   <Footer />
 </Base>

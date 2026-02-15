@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { getCollection, render } from "astro:content";
+
+import LogoSlider from "../components/animations/LogoSlider/LogoSlider.astro";
+import {stack,also } from "../content/about/logoList.json";
+export const size = 32;
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const about = (
+  await getCollection("about", ({ id }: CollectionEntry<"about">) => {
+    return id.startsWith(lang);
+  })
+).sort(
+  (a: CollectionEntry<"about">, b: CollectionEntry<"about">) =>
+    a.data.order - b.data.order,
+);
+if (!about) {
+  throw new Error("Could not find about content");
+}
+---
+
+<section id="About">
+  <h2>{t("nav.about")}</h2>
+  {
+    about.map(async (content: any) => {
+      const { Content } = await render(content);
+      const id = content.id.split("/")[1].split(".")[0];
+      return (
+        <>
+          <h3>{content.data.title}</h3>
+          <Content />
+          {id === "stack" && <LogoSlider icons={stack} size={size} />}
+          {id === "also" && <LogoSlider icons={also} size={size} />}
+        </>
+      );
+    })
+  }
+</section>

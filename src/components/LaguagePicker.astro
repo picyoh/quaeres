@@ -1,6 +1,6 @@
 ---
-import { languages } from "../../i18n/ui";
-import { getLangFromUrl } from "../../i18n/utils";
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
 const [path] = Astro.url.pathname.split("/");
 const urlLang = getLangFromUrl(Astro.url);
 ---

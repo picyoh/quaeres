@@ -7,7 +7,7 @@ const { icons, size } = Astro.props;
   .LogoSlider {
     position: relative;
     overflow-x: hidden;
-    padding: 2rem 0
+    padding: 2rem 0;
   }
 
   .LogoSlider::after {
@@ -29,8 +29,8 @@ const { icons, size } = Astro.props;
   }
 
   .Logotrack {
-   /* width: 200%; */
-   width: 100%;
+    /* width: 200%; */
+    width: 100%;
     display: flex;
     animation: scroll 15s linear infinite;
   }
@@ -40,7 +40,7 @@ const { icons, size } = Astro.props;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all .3s;
+    transition: all 0.3s;
   }
 
   .iconCont p {
@@ -61,7 +61,7 @@ const { icons, size } = Astro.props;
 </style>
 
 <div class="LogoSlider">
-<!-- TODO: check on mobile -->
+  <!-- TODO: check on mobile -->
   <div class="Logotrack">
     {
       icons.map(
@@ -83,7 +83,7 @@ const { icons, size } = Astro.props;
               <p>{title}</p>
             </div>
           );
-        }
+        },
       )
     }
   </div>
